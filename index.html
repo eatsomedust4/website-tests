@@ -1,0 +1,30 @@
+<html>
+	<body>
+	<title>this is a test</title>
+	<h1>this is a test</h1>
+	<button id="send">
+	send notification
+	</button>
+	<script>
+	function sendNotification() {
+	// Request permission
+	Notification.requestPermission().then(function(permission) {
+		if (permission === "granted") {
+			// Create the notification
+			var notification = new Notification('youve bean trolled', {
+            body: 'youve probibly bean told,
+            icon: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuHfegiTYCw9i8t6OPsSNevSo2FTuXC7NucQ&s',
+			});
+
+			// Display the notification
+			notification.show();
+		} else {
+			alert("Permission for notifications denied.");
+		}
+	});
+	
+	}
+	send.onclick = sendNotification;
+	</script>
+	</body>
+</html>
